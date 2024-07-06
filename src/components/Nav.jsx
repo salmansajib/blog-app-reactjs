@@ -7,15 +7,18 @@ function Nav({ isAuth, signUserOut }) {
       <Link className='' to='/'>
         Home
       </Link>
-      <Link className='' to='/createpost'>
-        Create Post
-      </Link>
+
       {!isAuth ? (
         <Link className='' to='/login'>
           Login
         </Link>
       ) : (
-        <button onClick={signUserOut}>Log Out</button>
+        <>
+          <Link className='' to='/createpost'>
+            Create Post
+          </Link>
+          <button onClick={signUserOut}>Log Out</button>
+        </>
       )}
     </nav>
   );
